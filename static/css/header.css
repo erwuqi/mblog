@@ -1,0 +1,7 @@
+.header-logo img{
+    width:100px;
+    height:100px;
+}
+.header-title h1{line-height:100px;}
+.header-logo{float:left;}
+.header-title{float:left;}

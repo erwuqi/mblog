@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}{% endblock %}
+    </title>
+    <!--Complete CSS v4.0.0-beta.3-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/index.css' %}">
+    <script src="http://www.jq22.com/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/readmore.min.js' %}"></script>
+    <!--Complete JavaScript v4.0.0-beta.3 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"
+     integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+</head>
+<body>
+   <div class="container-fluid">
+       {% include 'header.html' %}
+       <div class="row">
+           <div class="col-sm-3 clo-md-3">
+               <div class="panel panel-default">
+                   <div class="panel-heading">
+                       <h3>
+                           MENU
+                       </h3>
+                   </div>
+                   <div class="panel-body">
+                       <div class="list-group">
+                           <a href="/" class="list-group-item">HOME</a>
+                           <a href="http://news.163.com" class="list-group-item">实时新闻</a>
+                           <a href="http://news.cctv.com" class="list-group-item">电视新闻</a>
+                       </div>
+                       <p></p>
+                       <script type="text/javascript" src="http://feedjit.com/serve/?vv=1515&amp;tft=3&amp;dd=0&amp;
+                       wid=&amp;pid=0&amp;proid=0&amp;bc=FFFFFF&amp;tc=000000&amp;brd1=012B6B&amp;lnk=135D9E&amp;hc=FFFFFF
+                       &amp;hfc=2853A8&amp;btn=C99700&amp;ww=280&amp;wne=10&amp;srefs=0"></script><noscript>
+                       <a href="http://feedjit.com/">Live Traffic Stats</a></noscript>
+                       <div class="visitor-counter">
+                           <a href="https://info.flagcounter.com/poWI">
+                           <img src="https://s11.flagcounter.com/mini/poWI/bg_FFFFFF/txt_000000/border_CCCCCC/flags_0/" alt="Flag Counter" border="0"></a>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           <div class="col-sm-9 col-md-9">
+               <div class="panel panel-default">
+                   <div class="panel-heading">
+                       {% block headmessage %}{% endblock %}
+                   </div>
+                   <div class="panel-body">
+                       {% block content %}{% endblock %}
+                   </div>
+                   <div class="panel-footer">
+                       {% include 'footer.html' %}
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+</body>
+</html>
