@@ -21,11 +21,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '@yl$e%klt7hgcykvm6=osv*dc_75-j@v^gstdbg-c1&tbm*$_6'
-
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = {'*', 'www.highhiker.com.cn'}
 
 
 # Application definition
@@ -120,7 +120,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+#STATIC_ROOT =  '/static/'
+#文件上传配置
+MEDIA_URL = '/uploads/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'uploads')
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     '/mblog/static/',
 ]
+STATIC_ROOT = '/var/www/staticfilescd'

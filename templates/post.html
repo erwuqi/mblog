@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
-{% load markdown_deux_tags %}
+<!--{% load markdown_deux_tags %}-->
 {% block title %}欢迎来到我的博客{% endblock %}
 {% block headmessage %}
     <h3 style="font-family:楷体;">{{post.title}}</h3>
     <!--<a href="/">回到首页</a>-->
 {% endblock %}
 {% block content %}
-    <p>{{post.content | markdown }}</p>
+    {{post.content | safe }}
 {% endblock %}

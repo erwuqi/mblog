@@ -8,10 +8,12 @@ from django.contrib import admin
 
 KIND_CHOICES = (
     ('1','科技'),
-    ('2','国内'),
-    ('3','国外'),
+    ('2','时事'),
+    ('3','旅行'),
     ('4','生活'),
     ('5','资讯'),
+    ('6','文学'),
+    ('7','感情'),
 )
 
 class Post(models.Model):
@@ -29,3 +31,9 @@ class Post(models.Model):
 
 class PostAdmin(admin.ModelAdmin):
     list_display = ('title','slug','pub_date')
+
+    class Media:
+        js = ('/static/js/kindeditor/kindeditor-min.js',
+              '/static/js/kindeditor/lang/zh_CN.js',
+              '/static/js/kindeditor/config.js',
+        )

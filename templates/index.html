@@ -1,6 +1,6 @@
 <!--index.html-->
 {% extends 'base.html' %}
-{% load markdown_deux_tags %}
+<!--{% load markdown_deux_tags %}-->
 {% block title %}欢迎来到我的博客{% endblock %}
 {% block headmessage %}
     <h3 style="font-family:楷体;">本站文章列表</h3>
@@ -13,7 +13,7 @@
             </div>
             <div class="panel-body">
                 <article>
-                    {{post.content | markdown | truncatechars:"200"}}
+                    {{post.content | truncatechars:"200" | safe}}
                 </article>
             </div>
             <div class="panel-footer" style="background-color:#efefef">
